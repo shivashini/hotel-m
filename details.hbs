@@ -1,0 +1,30 @@
+<html>
+    <head>
+    <style>
+        table,td{
+            border: 1px solid black;
+        }
+    </style>
+    </head>
+    <body>
+        <table id="Customer">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+        </table>
+        <button type="button" onclick="myFunc()">Add</button>
+    <script>
+        function myFunc(){
+            var table = document.getElementById("Customer");
+            var row=table.insertRow(1);
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            cell1.innerHTML="shiva";
+            cell2.innerHTML="12";
+        }
+    </script>
+    </body>
+</html>

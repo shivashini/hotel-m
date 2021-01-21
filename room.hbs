@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chez Jerome</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- CSS Stylesheet -->
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Lato" rel="stylesheet">
+	<link rel="icon" type="image/png" href="/assets/img/fav-square.png">
+</head>
+<body>
+{{#each rooms}}
+  <h3>Current Room Information:</h3>
+  <h4><strong>Room #{{this.id}}</strong></h4>
+  {{#unless this.available}}
+    {{#if this.checkin}}
+      <h4><strong>Status:</strong> <span class="occupied">Occupied</span></h4>
+    {{/if}}
+    {{#unless this.checkin}}
+      <h4><strong>Status:</strong> <span class="reserved">Reserved</span></h4>
+    {{/unless}}
+    <p><strong>First Name:</strong> {{this.Guest.first_name}}</p>
+    <p><strong>Last Name:</strong> {{this.Guest.last_name}}</p>
+    <p><strong>Phone:</strong> {{this.Guest.phone}}</p>
+    <p><strong>Email:</strong> {{this.Guest.email}}</p>
+    <p><strong>Check-in:</strong> {{this.Guest.checkin}}</p>
+    <p><strong>Check-out:</strong> {{this.Guest.checkout}}</p>
+    {{#if this.checkin}}
+      <form action="/admin/checkout/id/{{this.id}}/?_method=PUT" method="POST">
+        <button class="btn btn-default" type="submit">Check Out</button>
+      </form>
+    {{/if}}
+    {{#unless this.checkin}}
+      <form action="/admin/checkin/id/{{this.id}}/?_method=PUT" method="POST">
+        <button class="btn btn-default" type="submit">Check In</button>
+      </form>
+    {{/unless}}
+  {{/unless}}
+  {{#if this.available}}
+    <h4><strong>Status:</strong> <span class="available">Available</span></h4>
+    <form action="/admin/book/id/{{this.id}}" method="GET"><button class="btn btn-default">Book This Room</button></form>
+  {{/if}}
+{{/each}}
+<br>
+<a href="/admin/rooms"><button class="btn btn-default">Go Back</button></a>
+<div class="row" style="padding-bottom:20px;"></div>
+    </body>
+</html>

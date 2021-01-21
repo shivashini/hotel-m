@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>
+    HMS
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="bg-info">
+    <div class="row">
+        <div class="col-md-10 offset-md-5" style="background-color: #fff;width=100%;margin:70px;margin-top:25px;padding:50px;;margin-right:20px">
+          <h3><a class="btn btn-secondary" href="/room"><i class="fa fa-plus"></i> Create New</a> Customer Details</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Checkin</th>
+            <th>Checkout</th>
+            <th>People</th>
+            <th>Kids</th>
+            <th>Room Type</th>
+            <th>Room Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>Teddy</td>
+            <td>Teddy@gmail.com</td>
+            <td>1234567890</td>
+            <td>Coimbatore</td>
+            <td>10/22/2019</td>
+            <td>10/23/2019</td>
+            <td>2</td>
+            <td>1</td>
+            <td>Family Room</td>
+            <td>101</td>
+            <td>
+                <a href="/room/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/room/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+             <tr>
+            <td>Shiva</td>
+            <td>shiva@gmail.com</td>
+            <td>1234567899</td>
+            <td>Coimbatore</td>
+            <td>10/24/2019</td>
+            <td>10/25/2019</td>
+            <td>1</td>
+            <td>0</td>
+            <td>Family Room</td>
+            <td>102</td>
+            <td>
+                <a href="/room/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/room/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+             <tr>
+            <td>choco</td>
+            <td>choco@gmail.com</td>
+            <td>1234447890</td>
+            <td>Coimbatore</td>
+            <td>10/23/2019</td>
+            <td>10/24/2019</td>
+            <td>1</td>
+            <td>0</td>
+            <td>Family Room</td>
+            <td>103</td>
+            <td>
+                <a href="/room/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/room/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>  
+      
+    
+
+
+  </div>
+    </div>
+    
+</body>
+</html>

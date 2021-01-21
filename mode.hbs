@@ -1,0 +1,168 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" /> 
+<title>List of Stock Items Sorted by Code</title>
+<STYLE TYPE="text/css">
+    thead {color:green}
+    tbody {color:blue;height:50px}
+    table.PrintForm
+    {
+        width: 620px;
+        font-family: Verdana, sans-serif, Arial;
+        border: 1px #000000 solid;
+        border-collapse: collapse;
+        border-spacing: 0px;
+            }
+    td.HeaderForm
+    { 
+        border: 1px #000000 solid;
+    }
+    td.LabelForm
+    { 
+        border-bottom: 1px #6699CC dotted;
+        text-align: left;
+        font-family: Verdana, sans-serif, Arial;
+        font-weight: bold;
+        font-size: .7em;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+        padding-right: 0px; 
+    }
+    td.LabelSimple
+    { 
+        text-align: left;
+        font-family: Verdana, sans-serif, Arial;
+        font-weight: bold;
+        font-size: .7em;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+        padding-right: 0px; 
+    }
+    td.SubTitle
+    { 
+        border-bottom: 1px #6699CC dotted;
+        text-align: left;
+        font-family: Verdana, sans-serif, Arial;
+        font-weight: bold;
+        font-size: .9em;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 10px;
+        padding-right: 0px; 
+    }
+    td.ValueForm
+    { 
+        border-bottom: 1px #6699CC dotted;
+        text-align: left;
+        font-family: Verdana, sans-serif, Arial;
+        font-weight: normal;
+        font-size: .7em;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+        padding-right: 0px; 
+    }
+    td.ValueSimple
+    { 
+        text-align: left;
+        font-family: Verdana, sans-serif, Arial;
+        font-weight: normal;
+        font-size: .7em;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+        padding-right: 0px; 
+    }
+td.ValueBold
+    { 
+        text-align: left;
+        font-family: Verdana, sans-serif, Arial;
+        font-weight: bold;
+        font-size: .7em;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+        padding-right: 0px; 
+    }
+    br 
+    { line-height:2 px; } 
+ 
+    .textAr { 
+        visibility: hidden; 
+        width: 1%;
+        height: 1px ;
+    } 
+    table.BR_SR1
+    {
+     border-bottom: 1px #6699CC dotted;
+      text-align: left;
+      font-family: Verdana, sans-serif, Arial;
+      font-weight: normal;
+      font-size: .8em;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 8px;
+      padding-right: 0px; 
+    }
+ 
+</STYLE>
+ 
+</head>
+<body >
+ 
+ 
+<table class="PrintForm" cellspacing="0" >
+    <tr>
+        <td class="HeaderForm" ><img src="\\192.168.2.6\Data\Templates\images\strata-hestia.gif" ></td>
+        <!--<td class="HeaderForm" >
+        <table border="0">
+            <tr><td colspan="2" align ="center">&nbsp; Tools issue form n° &lt;Number&gt;</td></tr>
+            <tr><td align ="right">Store :</td><td align ="left">&lt;Property.Description&gt;</td></tr>
+        </table> 
+        </td>/-->
+    </tr>
+</table>
+ 
+<table class="PrintForm" cellspacing="0" >
+    <form>
+    <thead>
+    <tr>
+        <td class="ValueForm" colspan="3" >CODE</td>
+        <td class="ValueForm" colspan="3" >ITEMS</td>
+        <td class="ValueForm" colspan="3" >QTY</td>
+        <td class="ValueForm" colspan="3" >UNIT</td>
+        <td class="ValueForm" colspan="3" >PRICE</td>
+        <td class="ValueForm" colspan="3" >TOTAL</td>
+    </tr>
+    </thead>
+ 
+    <tbody>
+    <tr>
+        <td class="ValueForm" colspan="3" id="code">&lt;Code&gt;</td>
+        <td class="ValueForm" colspan="3" id="item">&lt;Item Description&gt;</td>
+        <td class="ValueForm" colspan="3" id="qty">&lt;Qty&gt;</td>
+        <td class="ValueForm" colspan="3" id="unit">&lt;Unit&gt;</td>
+        <td class="ValueForm" colspan="3" id="price">&lt;Price&gt;</td>
+        <td class="ValueForm" colspan="3"id="total">&lt;Total&gt;</td>
+ 
+        <script type="text/javascript">
+        listCode = document.getelementById("code").childNodes[0].nodeValue;
+        listItem = document.getelementById("item").childNodes[0].nodeValue;
+        listQty = document.getelementById("qty").childNodes[0].nodeValue;
+        listUnit = document.getelementById("unit").childNodes[0].nodeValue;
+        listPrice = document.getelementById("price").childNodes[0].nodeValue;
+        listTotal = document.getelementById("total").childNodes[0].nodeValue;
+        document.write(listCode + " " + listItem + " " + listQty + " " + listUnit + " " + listPrice + " " + listTotal);
+        </script>
+ 
+    </tr>
+    </tbody>
+    </form>
+</table>
+ 
+</body>
+ 
+</html>
